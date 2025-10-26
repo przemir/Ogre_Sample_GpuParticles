@@ -61,9 +61,10 @@ public:
 private:
 
     HlmsParticleListener mParticleListener;
+
+    /// Those slots must match bindings inside files 500.Structs_piece_vs_piece_ps.hlsl and glsl
     static const int ParticleDataTexSlot = 5;
     static const int BucketGroupDataTexSlot = 3;
-    static const int EmitterDataTexSlot = 4; // deprecated
     static const int EmitterCoreDataTexSlot = 2;
 
 public:

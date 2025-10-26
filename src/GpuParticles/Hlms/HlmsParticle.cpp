@@ -294,7 +294,6 @@ void HlmsParticle::frameEnded()
 {
     Ogre::RenderSystem* renderSystem = getRenderSystem();
     renderSystem->_setTexture(ParticleDataTexSlot, 0, false);
-    renderSystem->_setTexture(EmitterDataTexSlot, 0, false);
     renderSystem->_setTexture(BucketGroupDataTexSlot, 0, false);
     renderSystem->_setTexture(EmitterCoreDataTexSlot, 0, false);
 
