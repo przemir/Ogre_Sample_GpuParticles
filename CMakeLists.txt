@@ -10,7 +10,7 @@
 
 #set( CMAKE_TOOLCHAIN_FILE CMake/iOS.cmake )
 
-cmake_minimum_required( VERSION 3.0 )
+cmake_minimum_required( VERSION 3.10 )
 project( Sample_GpuParticles )
 
 set( EXECUTABLE_OUTPUT_PATH "${CMAKE_CURRENT_SOURCE_DIR}/bin/${CMAKE_BUILD_TYPE}" )

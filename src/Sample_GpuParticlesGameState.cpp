@@ -63,6 +63,7 @@ namespace Demo
     {
         Ogre::Root *root = mGraphicsSystem->getRoot();
         Ogre::SceneManager *sceneManager = mGraphicsSystem->getSceneManager();
+        Ogre::RenderQueue *renderQueue = sceneManager->getRenderQueue();
 
         mGraphicsSystem->getCamera()->setPosition( Ogre::Vector3( 0, 30, 100 ) );
 
@@ -107,6 +108,8 @@ namespace Demo
             // Compositor is needed only in case of useDepthTexture == true.
             Ogre::IdString depthTextureCompositorNode = "Sample_GpuParticlesNode";
             Ogre::IdString depthTextureId = "depthTextureCopy";
+
+            renderQueue->setRenderQueueMode(15, Ogre::RenderQueue::FAST);
 
             mGpuParticleSystemWorld = OGRE_NEW GpuParticleSystemWorld(
                         Ogre::Id::generateNewId<Ogre::MovableObject>(),

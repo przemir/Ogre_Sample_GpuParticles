@@ -116,9 +116,9 @@ HlmsParticleListener* HlmsParticle::getParticleListener()
     return &mParticleListener;
 }
 
-void HlmsParticle::setupRootLayout( Ogre::RootLayout &rootLayout )
+void HlmsParticle::setupRootLayout( Ogre::RootLayout &rootLayout, size_t tid  )
 {
-    HlmsUnlit::setupRootLayout( rootLayout );
+    HlmsUnlit::setupRootLayout( rootLayout, tid );
 
     Ogre::DescBindingRange *descBindingRanges = rootLayout.mDescBindingRanges[0];
     descBindingRanges[Ogre::DescBindingTypes::ReadOnlyBuffer].end = 6u;
