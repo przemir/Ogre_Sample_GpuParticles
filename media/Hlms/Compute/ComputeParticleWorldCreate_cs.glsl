@@ -115,7 +115,7 @@ void main()
     #define emitterInstance emitterInstanceData[entry.emitterInstanceId]
 
     NumberGenerator random;
-    random.seed = float2(particleIndex, particleWorld[0].randomIteration);
+    random.seed = float2(particleIndex, particleWorld[0].randomPercent);
     random.seedAddon = int( MaxParticles + 1u );
     
 @property(!initLocationInUpdate)

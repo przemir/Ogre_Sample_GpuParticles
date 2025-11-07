@@ -119,7 +119,7 @@ const int GpuParticleSystemWorld::ParticleWorldDataStructSize =
         sizeof(float) * 16u +       // camera prev View * Projection Inversion
         sizeof(float) * 2u +        // camera projection AB
         sizeof(float) * 1u +        // elapsed time
-        sizeof(Ogre::uint32) * 1u;  // randomIteration
+        sizeof(float) * 1u;         // randomPercent
 
 
 const int GpuParticleSystemWorld::RenderableTypeId = 5002; // Magic number to identify this renderable insinde HlmsParticle
@@ -1553,13 +1553,8 @@ void GpuParticleSystemWorld::uploadToGpuParticleWorld(float elapsedTime)
 
         *particleWorldBuffer++ = elapsedTime;
 
-#define AS_U32PTR( x ) reinterpret_cast<uint32*RESTRICT_ALIAS>(x)
-
-        int randomNumber = rand();
-        *AS_U32PTR( particleWorldBuffer ) = randomNumber;        ++particleWorldBuffer;
-
-#undef AS_U32PTR
-
+        float randomPercent = static_cast <float> (rand()) / static_cast <float> (RAND_MAX);
+        *particleWorldBuffer++ = randomPercent;
     }
 
     OGRE_ASSERT_LOW( (size_t)(particleWorldBuffer - particleWorldBufferStart) * sizeof(float) <=

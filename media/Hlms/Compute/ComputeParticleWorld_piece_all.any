@@ -12,7 +12,7 @@ float NumberGenerator_rand(float2 co)
 @property( syntax == hlsl )
 	#define fract frac
 @end
-   return fract(sin(dot(co.xy, float2(12.9898,78.233))) * 43758.5453);
+   return fract(sin(mod(dot(co, float2(12.9898,78.233)), 3.14)) * 43758.5453);
 }
 
 float NumberGenerator_generate( inout NumberGenerator rng )
@@ -263,7 +263,7 @@ struct ParticleWorld {
     float4x4 prevCameraInvVP;
     float2 cameraProjectionParamsAB;
     float elapsedTime;
-    uint randomIteration;
+    float randomPercent;
 };
 
 @end
