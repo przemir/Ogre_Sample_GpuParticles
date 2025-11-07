@@ -136,6 +136,12 @@ GpuParticleSystemWorld::GpuParticleSystemWorld(Ogre::IdType id,
                                                IdString depthTextureCompositorNode,
                                                IdString depthTextureName)
     : MovableObject( id, objectMemoryManager, manager, renderQueueId )
+    , mHlmsParticleListener(hlmsParticleListener)
+    , mUseDepthTexture(useDepthTexture)
+    , mInitLocationInUpdate(true)
+    , mCompositorWorkspace(compositorWorkspace)
+    , mDepthTextureCompositorNode(depthTextureCompositorNode)
+    , mDepthTextureName(depthTextureName)
     , mVaoManager(manager->getDestinationRenderSystem()->getVaoManager())
     , mMaxParticles(0)
     , mMaxEmitterInstances(0)
@@ -146,12 +152,6 @@ GpuParticleSystemWorld::GpuParticleSystemWorld(Ogre::IdType id,
     , mGroupsPerBucket(0)
     , mParticleDataStructFinalSize(0)
     , mEmitterCoreDataStructFinalSize(0)
-    , mHlmsParticleListener(hlmsParticleListener)
-    , mUseDepthTexture(useDepthTexture)
-    , mInitLocationInUpdate(true)
-    , mCompositorWorkspace(compositorWorkspace)
-    , mDepthTextureCompositorNode(depthTextureCompositorNode)
-    , mDepthTextureName(depthTextureName)
 {
     //Set the bounds!!! Very important! If you don't set it, the object will not
     //appear on screen as it will always fail the frustum culling.
