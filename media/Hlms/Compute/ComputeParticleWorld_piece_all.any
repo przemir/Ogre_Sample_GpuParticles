@@ -6,6 +6,13 @@ struct NumberGenerator
     int seedAddon;
 };
 
+@property( syntax == hlsl )
+float mod(float x, float y)
+{
+  return x - y * floor(x/y);
+}
+@end
+
 // Generate value from range [0; 1) (frac value cannot reach 1)
 float NumberGenerator_rand(float2 co)
 {
