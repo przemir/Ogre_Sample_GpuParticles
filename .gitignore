@@ -11,9 +11,11 @@ bin/RelWithDebInfo
 bin/Data/Hlms/Common
 bin/Data/Hlms/Pbs
 bin/Data/Hlms/Unlit
+bin/Data/Hlms/Terra
 bin/Data/Materials/Common
 bin/Data/DebugPack.zip
 bin/Data/resources2.cfg
+bin/Data/Ogre.log
 include/OgreCommon
 src/OgreCommon
 Dependencies/Ogre

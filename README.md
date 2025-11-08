@@ -1,6 +1,6 @@
 # Ogre_Sample_GpuParticles
 
-Sample showing how to create gpu particles with Ogre. Currently only DirectX11 is working (shaders are written only in HLSL).
+Sample showing how to create gpu particles with Ogre. Works for Direct3D11, OpenGL3+. Vulkan works as long as particle system is with render queue where there is no caster pass (otherwise crashes). Metal was not implemented.
 This contains ParticleSystemWorld, capable of storing multiple particle types at the same time.
 
 ![screen](screens/Sample_GpuParticles.jpg 'Screen')
@@ -8,7 +8,7 @@ This contains ParticleSystemWorld, capable of storing multiple particle types at
 # Instalation
 
 CMAKE. There are 5 paths to set: OGRE_SOURCE, OGRE_BINARIES, OGRE_DEPENDENCIES_DIR, SDL2_SOURCE, SDL2_BINARIES.
-Make sure there is RenderSystem_Direct3D11_d in plugins.
+Make sure there is RenderSystem_Direct3D11_d (or other RenderSystem) in plugins.
 
 # Structures
 
